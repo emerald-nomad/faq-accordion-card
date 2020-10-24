@@ -1,0 +1,31 @@
+:root {
+  // COLORS
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red:  hsl(14, 88%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --soft-voilet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+
+  --light-grayish-blue: hsl(240, 5%, 91%);
+
+  font-size: 12px;
+  font-family: 'Kumbh Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(var(--soft-voilet), var(--soft-blue)) no-repeat;
+
+
+}
