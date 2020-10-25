@@ -1,6 +1,149 @@
+@import "mixins";
+
 .container {
-  min-height: 500px;
   background-color: white;
   margin: auto 2em;
   border-radius: 2em;
+  padding: 0 2em 2em;
+
+  @include desktop {
+    min-height: 40em;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 40em));
+    align-items: center;
+    padding: 0;
+    position: relative;
+  }
+}
+
+.img-container-mobile {
+  position: relative;
+  text-align: center;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.img-container-desktop {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.bg-pattern-desktop {
+  position: absolute;
+  top: -22em;
+  left: -42em;
+  width: 75em;
+}
+
+.woman-online-mobile {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-55%);
+  top: -9em;
+}
+
+.woman-online-desktop {
+  position: absolute;
+  top: 5em;
+  left: -6em;
+
+
+}
+
+.box-desktop {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 17em;
+
+  left: -8em;
+
+
+  @include desktop {
+    display: block;
+  }
+}
+
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1em 0;
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+
+  @include desktop {
+    text-align: left;
+  }
+}
+
+.content-container {
+  @include desktop {
+    padding-right: 10em;
+  }
+}
+
+.question {
+  &-container {
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding-bottom: 1.5em;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & > h2 {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--dark-grayish-blue);
+      transition: var(--transitions);
+    }
+
+    & > img {
+      display: block;
+      margin-left: auto;
+      transition: var(--transitions);
+    }
+  }
+
+  &-content {
+    color: var(--dark-grayish-blue);
+    overflow: hidden;
+
+    p {
+      padding-top: 0;
+      transition: var(--transitions);
+      margin-bottom: -3em;
+    }
+  }
+
+  &-expanded {
+    & h2 {
+      font-weight: 700;
+      color: var(--very-dark-desaturated-blue);
+    }
+
+    & img {
+      transform: rotate(-180deg);
+    }
+
+    & p {
+      padding-top: 1em;
+      margin-bottom: 0;
+    }
+  }
+
+
 }

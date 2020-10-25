@@ -1,7 +1,9 @@
+@import "mixins";
+
 :root {
   // COLORS
   --very-dark-desaturated-blue: hsl(238, 29%, 16%);
-  --soft-red:  hsl(14, 88%, 65%);
+  --soft-red: hsl(14, 88%, 65%);
   --very-dark-grayish-blue: hsl(237, 12%, 33%);
   --dark-grayish-blue: hsl(240, 6%, 50%);
 
@@ -10,7 +12,10 @@
 
   --light-grayish-blue: hsl(240, 5%, 91%);
 
+  --transitions: all .25s ease-out;
+
   font-size: 12px;
+  font-weight: 400;
   font-family: 'Kumbh Sans', sans-serif;
   box-sizing: border-box;
 }
@@ -21,11 +26,18 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  font-weight: inherit;
 }
 
 body {
   min-height: 100vh;
   background: linear-gradient(var(--soft-voilet), var(--soft-blue)) no-repeat;
+  padding-top: 15em;
 
-
+  @include desktop {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
